@@ -1,4 +1,4 @@
-# 1) 1757. Recyclable and Low Fat Products
+e# 1) 1757. Recyclable and Low Fat Products
 ```
 # Write your MySQL query statement below 
 SELECT product_id FROM Products where low_fats = 'Y' and recyclable = 'Y'
@@ -70,4 +70,38 @@ GROUP BY customer_id;
 
 ```
 
-# 9) 
+# 9) 1661. Average Time of Process per Machine : 
+
+```
+# Write your MySQL query statement below
+select
+machine_id
+, round(sum(if(activity_type = 'start', -1, 1) *timestamp)/count(distinct process_id),3) as processing_time
+from activity
+group by machine_id
+
+```
+
+# 10) 577. Employee Bonus :
+
+```
+# Write your MySQL query statement below
+select e.name, b.bonus
+from employee e left join bonus b on e.empid = b.empid
+where b.bonus <1000 or bonus is null
+
+```
+
+# 11.) 1280. Students and Examinations : 
+
+```
+
+# Write your MySQL query statement below
+SELECT s.student_id, s.student_name, sub.subject_name, COUNT(e.subject_name) AS attended_exams
+FROM Students s
+CROSS JOIN Subjects sub
+LEFT JOIN Examinations e ON s.student_id = e.student_id AND sub.subject_name = e.subject_name
+GROUP BY s.student_id, s.student_name, sub.subject_name
+ORDER BY s.student_id, sub.subject_name;
+
+```
