@@ -1,4 +1,4 @@
-e# 1) 1757. Recyclable and Low Fat Products
+# 1) 1757. Recyclable and Low Fat Products
 ```
 # Write your MySQL query statement below 
 SELECT product_id FROM Products where low_fats = 'Y' and recyclable = 'Y'
