@@ -105,3 +105,30 @@ GROUP BY s.student_id, s.student_name, sub.subject_name
 ORDER BY s.student_id, sub.subject_name;
 
 ```
+
+# 12.) 1633. Percentage of Users Attended a Contest : 
+
+```
+# Write your MySQL query statement below
+with total_user as (
+    select 
+        count(*) as cnt
+    from
+        Users 
+)
+select
+    contest_id, round((count(user_id)*100/t.cnt),2) as percentage
+from 
+    Register r, total_user t
+group by  contest_id
+order by percentage desc, contest_id
+
+```
+
+# 13.) 570. Managers with at Least 5 Direct Reports : 
+
+```
+select name from employee where id in
+(select managerId from employee group by managerId
+having (count(distinct id)>=5))
+```
