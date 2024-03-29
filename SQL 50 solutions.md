@@ -147,3 +147,21 @@ ON a.user_id = b.user_id
 GROUP BY a.user_id
 
 ```
+# 15.) 620. Not Boring Movies : 
+
+```
+
+# Write your MySQL query statement below
+SELECT * FROM cinema WHERE (id % 2 = 1) AND (description != "boring") ORDER BY rating DESC;
+
+
+
+```
+
+# 16.)  1251. Average Selling Price : 
+
+```
+
+
+
+```
